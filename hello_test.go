@@ -40,7 +40,7 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("should default to english if a unsupported language is entered", func(t *testing.T) {
-		actual := Hello(name, "Swedish")
+		actual := Hello(name, "Chinese")
 		expected := buildName(t, englishGreeting, name)
 
 		if expected != actual {

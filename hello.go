@@ -1,11 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const (
-	englishHelloPrefix = "Hello"
-	spanishHelloPrefix = "Hola"
-	frenchHelloPrefix  = "Bonjour"
+	french        = "French"
+	spanish       = "Spanish"
+	swedish       = "Swedish"
+	englishPrefix = "Hello"
+	spanishPrefix = "Hola"
+	frenchPrefix  = "Bonjour"
+	swedishPrefix = "Hej"
 )
 
 func Hello(name string, language string) string {
@@ -13,15 +19,21 @@ func Hello(name string, language string) string {
 		name = "world"
 	}
 
-	if language == "Spanish" {
-		return fmt.Sprintf("%s, %s!", spanishHelloPrefix, name)
-	}
+	return fmt.Sprintf("%s, %s!", greetingPrefix(language), name)
+}
 
-	if language == "French" {
-		return fmt.Sprintf("%s, %s!", frenchHelloPrefix, name)
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case spanish:
+		prefix = spanishPrefix
+	case french:
+		prefix = frenchPrefix
+	case swedish:
+		prefix = swedishPrefix
+	default:
+		prefix = englishPrefix
 	}
-
-	return fmt.Sprintf("%s, %s!", englishHelloPrefix, name)
+	return
 }
 
 func main() {
