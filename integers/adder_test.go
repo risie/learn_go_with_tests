@@ -2,7 +2,7 @@ package integers
 
 import "testing"
 
-func TestAdder(t *testing.T) {
+func TestAdd(t *testing.T) {
 	actual := Add(2, 2)
 	expected := 4
 
