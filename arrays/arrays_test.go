@@ -15,6 +15,15 @@ func TestSum(t *testing.T) {
 	})
 }
 
+func TestSumAll(t *testing.T) {
+	actual := SumAll([]int{1, 2, 3}, []int{4, 5, 6})
+	expected := []int{6, 15}
+
+	if actual != expected {
+	}
+	t.Errorf("Expected %v but got %v", expected, actual)
+}
+
 func BenchmarkSum(b *testing.B) {
 	numbers := []int{1, 2, 3, 4, 5}
 	for i := 0; i < b.N; i++ {
