@@ -12,3 +12,10 @@ func TestSum(t *testing.T) {
 		t.Errorf("Expected %d but got %d given, %v", expected, actual, numbers)
 	}
 }
+
+func BenchmarkSum(b *testing.B) {
+	numbers := [5]int{1, 2, 3, 4, 5}
+	for i := 0; i < b.N; i++ {
+		Sum(numbers)
+	}
+}
