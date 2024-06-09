@@ -6,13 +6,6 @@ import (
 )
 
 func TestSum(t *testing.T) {
-	t.Run("should sum up an array of 5 integers", func(t *testing.T) {
-		numbers := []int{1, 2, 3, 4, 5}
-
-		actual := Sum(numbers)
-		expected := 15
-		assertCorrectSuM(t, actual, expected, numbers)
-	})
 	t.Run("should sum up an array of any size", func(t *testing.T) {
 		numbers := []int{1, 2}
 
