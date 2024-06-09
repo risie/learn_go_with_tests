@@ -1,6 +1,9 @@
 package arrays
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 	t.Run("should sum up an array of 5 integers", func(t *testing.T) {
@@ -24,6 +27,13 @@ func BenchmarkSum(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Sum(numbers)
 	}
+}
+
+func ExampleSum() {
+	numbers := []int{1, 2, 3, 4, 5}
+	sum := Sum(numbers)
+	fmt.Println(sum)
+	// Output: 15
 }
 
 func assertCorrectSuM(t testing.TB, actual, expected int, numbers []int) {
