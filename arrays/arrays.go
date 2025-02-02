@@ -10,4 +10,5 @@ func Sum(numbers []int) int {
 
 func SumAll(numbersToSum ...[]int) []int {
 	return []int{}
+
 }
