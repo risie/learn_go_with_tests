@@ -34,12 +34,28 @@ func BenchmarkSum(b *testing.B) {
 	}
 }
 
+func BenchmarkSumAll(b *testing.B) {
+	numbers1 := []int{1, 2, 3, 4, 5}
+	numbers2 := []int{6, 7, 8, 9, 10}
+	for i := 0; i < b.N; i++ {
+		SumAll(numbers1, numbers2)
+	}
+}
+
 // Examples
 func ExampleSum() {
 	numbers := []int{1, 2, 3, 4, 5}
 	sum := Sum(numbers)
 	fmt.Println(sum)
 	// Output: 15
+}
+
+func ExampleSumAll() {
+	numbers1 := []int{1, 2, 3, 4, 5}
+	numbers2 := []int{6, 7, 8, 9, 10}
+	sums := SumAll(numbers1, numbers2)
+	fmt.Println(sums)
+	// Output: [15 40]
 }
 
 func assertCorrectSuM(t testing.TB, actual, expected int, numbers []int) {
